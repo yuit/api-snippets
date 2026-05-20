@@ -1,6 +1,6 @@
 {
   "include": [
-    ".eslintrc.js",
+    ".ncurc.js",
     "commitlint.config.js",
     "jest.config.js",
     "src",
@@ -11,7 +11,7 @@
   ],
   "compilerOptions": {
     "target": "es2022",
-    "module": "commonjs",
+    "module": "node20",
     "plugins": [
       {
         "transform": "ts-auto-mock/transformer",
@@ -30,6 +30,7 @@
     "sourceMap": true,
     "outDir": "./lib",
     "strict": true,
+    "skipLibCheck": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
@@ -40,17 +41,20 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": false,
-    "moduleResolution": "node",
-    "baseUrl": "./",
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "rootDir": "./src",
     "paths": {
       "~/*": [
-        "src/*"
+        "./src/*"
       ],
       "test/*": [
-        "test/*"
+        "./test/*"
       ]
-    }
+    },
+    "types":[
+      "node",
+      "jest"
+    ]
   }
 }

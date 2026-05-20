@@ -4,6 +4,10 @@
     // Only use one of ["low": true, "moderate": true, "high": true, "critical": true]
     "moderate": true,
     "allowlist": [
-        "GHSA-3ppc-4f35-3m26"
+        /**
+            [05-18-2026] ws (WebSocket): Uninitialized memory disclosure.
+            Not direct dependency of the repo but used inside "@redocly/cli@2.31.1", "browser-sync@3.0.4", and "socket.io@4.8.3".
+        **/
+        "GHSA-58qx-3vcg-4xpx"
     ]
 }
