@@ -21,6 +21,10 @@ ignore:
       name: "ws (WebSocket)"
       version: "8.18.3"
     reason: " Uninitialized memory disclosure"
+  - vulnerability: "GHSA-hmw2-7cc7-3qxx"
+    package:
+      name: "form-data"
+    reason: "form-data CRLF injection; transitive dev/build-tooling dependency (@redocly/cli, browser-sync, socket.io), not in the published artifact; no non-breaking fix as of 2026-06-25"
 
 # Output formats for scan results
 output:
