@@ -1,4 +1,17 @@
 # Changelog: [mojaloop/api-snippets](https://github.com/mojaloop/api-snippets)
+## [18.4.0](https://github.com/mojaloop/api-snippets/compare/v18.3.2...v18.4.0) (2026-06-25)
+
+
+### Features
+
+* pisp v2 ([#221](https://github.com/mojaloop/api-snippets/issues/221)) ([a0f9dc1](https://github.com/mojaloop/api-snippets/commit/a0f9dc146f56bb8ae24f7846db89537e8d9227c0)), closes [#220](https://github.com/mojaloop/api-snippets/issues/220) [PR#218](https://github.com/mojaloop/PR/issues/218)
+
+
+### Maintenance
+
+* cleanup vulnerabilities ([d0e7ea5](https://github.com/mojaloop/api-snippets/commit/d0e7ea5f8438face70f897527a7c89758ff866f0))
+* update libs, orb and node, fix vuls ([fd9c167](https://github.com/mojaloop/api-snippets/commit/fd9c167762790bdae4e5c063a2bb23e084b56be5))
+
 ### [18.3.2](https://github.com/mojaloop/api-snippets/compare/v18.3.1...v18.3.2) (2026-02-24)
 
 
