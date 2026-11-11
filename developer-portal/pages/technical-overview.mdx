@@ -1,0 +1,47 @@
+---
+title: "Technical Overview"
+---
+## Architecture Overview
+
+The Mojaloop Hub is the central switch that connects Digital Financial Services Providers (DFSPs) — such as banks, mobile money operators, and fintechs — into an interoperable, real-time payment network. It uses a **microservices-based architecture** built with Node.js and TypeScript, deployed on cloud infrastructure via Kubernetes and Helm. The platform leverages **Apache Kafka** for asynchronous, event-driven message streaming and **MySQL** for transactional persistence.
+
+![Mojaloop End-to-End Architecture](https://docs.mojaloop.io/assets/img/Arch-Mojaloop-end-to-end-PI6.1f29af1a.svg)
+
+For more details, see the [Mojaloop Technical Documentation](https://docs.mojaloop.io/technical/#mojaloop-services).
+
+## Mojaloop Services
+
+### Core Services
+
+| Service | Description |
+|---|---|
+| **ML API Adapter** (`ml-api-adapter`) | The entry and exit point for external communication with DFSPs. Translates and handles the standard RESTful FSPIOP API requests and callbacks. |
+| **Central Ledger** (`central-ledger`) | The core engine for fund movements, position management, and transaction logging. Enforces scheme rules, manages participant liquidity limits, and executes multi-lateral clearing logic via event-driven Kafka handlers (Prepare, Fulfil, Position). |
+| **Account Lookup Service** (`account-lookup-service`) | A directory resolver that maps user aliases (phone numbers, national IDs, merchant codes) to the correct destination DFSP. Supports modular **Oracle adapters** for decentralized or centralized registries. |
+| **Quoting Service** (`quoting-service`) | Facilitates fee and commission calculations prior to transfer execution. Orchestrates quote requests between Payer and Payee DFSPs to determine applicable exchange rates, fees, and commissions. |
+| **Central Settlement** (`central-settlement`) | Manages settlement processes between the hub and participating DFSPs, coordinating with external settlement engines. |
+
+### Edge & Ecosystem Components
+
+| Component | Description |
+|---|---|
+| **Payment Manager** (`pm4ml`) | A lightweight edge component deployed at the DFSP side. Simplifies onboarding by abstracting complex security requirements (mTLS, JWS signing) and translating core banking protocols into the Mojaloop API format. |
+| **Mojaloop Connection Manager** (MCM) | Central administrative tool for managing participant certificates, endpoint configurations, and secure mTLS onboarding. |
+| **ML Testing Toolkit** | An automated testing and simulation suite for validating DFSP compliance against the standard Mojaloop APIs before going live in production. |
+
+## Transaction Flow
+
+A standard Mojaloop payment follows three phases:
+
+1. **Discovery** — The Payer DFSP queries the **Account Lookup Service (ALS)** to discover which DFSP holds the recipient's account (the Payee DFSP).
+2. **Agreement** — The Payer DFSP requests a quote through the **Quoting Service** to determine fees, taxes, exchange rates, and exact currency amounts.
+3. **Transfer** — Executed in two sub-phases:
+   - **Prepare** — The Payer DFSP sends a transfer request to the Hub. The Central Ledger checks liquidity positions, reserves the funds, and forwards the request to the Payee DFSP.
+   - **Fulfil** — Once the Payee accepts, a fulfilment message is sent back through the switch, committing the transaction, updating ledger balances, and notifying both parties asynchronously.
+
+## Security & Non-Functional Highlights
+
+- **Asynchronous Scalability** — Apache Kafka event queues decouple traffic spikes from the central ledger database, enabling high throughput for national real-time payment rails.
+- **Message Integrity** — End-to-end payload security via JSON Web Signatures (JWS) for non-repudiation.
+- **Transport Security** — Mutual TLS (mTLS) between the hub and external DFSP nodes.
+- **Authorization** — OAuth2/OIDC for administrative access control.
