@@ -117,17 +117,17 @@ const config: ZudokuConfig = {
           type: "category",
           icon: "telescope",
           collapsed: false,
-          label: "Developer Portal",
+          label: "About Mojaloop",
           items: [
             "introduction",
-            "technical-overview",
+            "architecture-overview",
           ],
         },
         {
           type: "category",
           icon: "life-buoy",
-          label: "Support",
-          items: ["support/contact", "support/faq"],
+          label: "Community",
+          items: ["community/guide", "community/help-and-bug-reports"],
         },
         { type: "separator" },
         {
