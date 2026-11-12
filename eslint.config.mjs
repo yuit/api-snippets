@@ -15,6 +15,7 @@ export default [
       "**/openapi.ts",
       "**/schemas.ts",
       "**/types.ts",
+      "./developer-portal/public/**/*.js",
     ],
   },
 

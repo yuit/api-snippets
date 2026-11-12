@@ -1,238 +1,195 @@
 import type { ReactNode } from "react";
-import type {
-  ZudokuConfig,
-} from "zudoku";
+import type { ZudokuConfig } from "zudoku";
 import { Callout } from "zudoku/components";
 import { NotFound } from "./src/NotFound";
 
-const config: ZudokuConfig = {
-  metadata: {
-    favicon: "https://mojaloop.io/wp-content/uploads/2025/04/cropped-cropped-mojaloop_favicon-32x32.png",
-    title: "%s | Mojaloop Foundation",
-    defaultTitle: "Mojaloop Foundation",
-    description: "Open Source Inclusive Instant Payment System",
+const metadata: ZudokuConfig["metadata"] = {
+  favicon:
+    "https://mojaloop.io/wp-content/uploads/2025/04/cropped-cropped-mojaloop_favicon-32x32.png",
+  title: "%s | Mojaloop Foundation",
+  defaultTitle: "Mojaloop Foundation",
+  description: "Open Source Inclusive Instant Payment System",
+};
+
+const apis: ZudokuConfig["apis"] = [
+  {
+    type: "file",
+    input: "../docs/thirdparty-v2.0-payment-initiation-snippets.yaml",
+    path: "api-3ppi",
   },
-  docs: {
-    publishMarkdown: true,
-    contentNegotiation: true,
-    llms: {
-      llmsTxt: true,
-      llmsTxtFull: true,
-      title: "Mojaloop  Developer Platform",
-      description:
-        "Open source software lowers the cost to build, maintain and modify an inclusive instant payment system",
-      instructions:
-        "This is the Mojaloop Developer Platform. You can use this platform to explore the Mojaloop APIs, read the documentation, and learn how to integrate with Mojaloop.",
+];
+
+const docs: ZudokuConfig["docs"] = {
+  publishMarkdown: true,
+  contentNegotiation: true,
+  llms: {
+    llmsTxt: true,
+    llmsTxtFull: true,
+    title: "Mojaloop  Developer Platform",
+    description:
+      "Open source software lowers the cost to build, maintain and modify an inclusive instant payment system",
+    instructions:
+      "This is the Mojaloop Developer Platform. You can use this platform to explore the Mojaloop APIs, read the documentation, and learn how to integrate with Mojaloop.",
+  },
+};
+
+const site: ZudokuConfig["site"] = {
+  sidebar: {
+    togglePosition: "center",
+    toggleVisibility: "hover",
+  },
+  notFoundPage: <NotFound />,
+  logo: {
+    src: {
+      light: "https://docs.mojaloop.io/mojaloop_logo_med.png",
+      dark: "https://docs.mojaloop.io/mojaloop_logo_med.png",
     },
+    width: 160,
+    height: 40,
+    alt: "Mojaloop Foundation",
   },
-  sitemap: {
-    siteUrl: "https://cosmocargo.dev",
-  },
-  site: {
-    sidebar: {
-      togglePosition: "center",
-      toggleVisibility: "hover",
-    },
-    notFoundPage: <NotFound />,
-    logo: {
-      src: {
-        light: "https://docs.mojaloop.io/mojaloop_logo_med.png",
-        dark: "https://docs.mojaloop.io/mojaloop_logo_med.png"
+  footer: {
+    columns: [
+      {
+        title: "Product",
+        links: [
+          { label: "Features", href: "https://zudoku.dev" },
+          {
+            label: "Docs",
+            href: "https://zudoku.dev/docs/?utm_source=cosmo-cargo",
+          },
+        ],
       },
-      width: 160,
-      height: 40,
-      alt: "Mojaloop Foundation",
-    },
-    footer: {
-      columns: [
-        {
-          title: "Product",
-          links: [
-            { label: "Features", href: "https://zudoku.dev" },
-            {
-              label: "Docs",
-              href: "https://zudoku.dev/docs/?utm_source=cosmo-cargo",
-            },
-          ],
-        },
-        {
-          title: "Foundation",
-          links: [
-            { label: "About", href: "https://mojaloop.io/foundation/mission/" },
-            { label: "Blog", href: "https://mojaloop.io/category/blog/" },
-          ],
-        },
-        {
-          title: "Resources",
-          links: [
-            { label: "API Reference", href: "/" },
-            { label: "Support", href: "/" },
-          ],
-        },
-        {
-          title: "Legal",
-          links: [
-            { label: "Privacy", href: "/" },
-            { label: "Terms", href: "/" },
-            { label: "Security", href: "/" },
-          ],
-        },
-      ],
-      social: [
-        {
-          href: "https://github.com/mojaloop/",
-          icon: "github",
-        },
-      ],
-      copyright: `© ${new Date().getFullYear()} Mojaloop Foundation. All rights reserved.`,
-    },
-  },
-  mdx: {
-    components: {
-      Trademark: () => "™",
-      SpaceWarning: ({
-        children,
-        sector,
-      }: {
-        children: ReactNode;
-        sector?: string;
-      }) => (
-        <Callout
-          type="danger"
-          title={sector ? `Sector ${sector} Advisory` : "Space Advisory"}
-        >
-          {children}
-        </Callout>
-      ),
-    },
-  },
-  navigation: [
-    {
-      type: "category",
-      label: "Documentation",
-      icon: "book-open",
-      items: [
-        { type: "filter", placeholder: "Filter documentation" },
-        {
-          type: "category",
-          icon: "telescope",
-          collapsed: false,
-          label: "About Mojaloop",
-          items: [
-            "introduction",
-            "architecture-overview",
-          ],
-        },
-        {
-          type: "category",
-          icon: "life-buoy",
-          label: "Community",
-          items: ["community/guide", "community/help-and-bug-reports"],
-        },
-        { type: "separator" },
-        {
-          type: "link",
-          label: "See Shipment API",
-          to: "/api-shipments",
-          icon: "arrow-right",
-        },
-      ],
-    },
-    {
-      type: "link",
-      icon: "ship",
-      to: "/api-shipments",
-      label: "Shipments",
-    },
-  ],
-  defaults: {
-    apis: {
-      examplesLanguage: "js",
-      schemaDownload: {
-        enabled: true,
-        fileName: "openapi",
+      {
+        title: "Foundation",
+        links: [
+          { label: "About", href: "https://mojaloop.io/foundation/mission/" },
+          { label: "Blog", href: "https://mojaloop.io/category/blog/" },
+        ],
       },
-    },
-  },
-  search: {
-    type: "pagefind",
-  },
-  apis: [
-    {
-      type: "file",
-      input: "./apis/openapi.yaml",
-      path: "api-shipments",
-      options: {
-        disableSecurity: false,
-        transformExamples: ({ content, auth }) => {
-          if (!auth.isAuthenticated) {
-            return content;
-          }
-          return content.map((c) => ({
-            ...c,
-            examples: c.examples?.map((e) => {
-              if (e.name === "domestic" || e.name === "simple") {
-                return {
-                  ...e,
-                  value: {
-                    ...e.value,
-                    recipientEmail: auth?.profile?.email,
-                  },
-                };
-              }
-              return e;
-            }),
-          }));
-        },
+      {
+        title: "Resources",
+        links: [
+          { label: "API Reference", href: "/" },
+          { label: "Support", href: "/" },
+        ],
       },
+      {
+        title: "Legal",
+        links: [
+          { label: "Privacy", href: "/" },
+          { label: "Terms", href: "/" },
+          { label: "Security", href: "/" },
+        ],
+      },
+    ],
+    social: [
+      {
+        href: "https://github.com/mojaloop/",
+        icon: "github",
+      },
+    ],
+    copyright: `© ${new Date().getFullYear()} Mojaloop Foundation. All rights reserved.`,
+  },
+};
+
+const navigation: ZudokuConfig["navigation"] = [
+  {
+    type: "category",
+    label: "Documentation",
+    icon: "book-open",
+    items: [
+      { type: "filter", placeholder: "Filter documentation" },
+      {
+        type: "category",
+        icon: "telescope",
+        collapsed: false,
+        label: "About Mojaloop",
+        items: ["introduction", "architecture-overview"],
+      },
+      {
+        type: "category",
+        icon: "life-buoy",
+        label: "Community",
+        items: ["community/guide", "community/help-and-bug-reports"],
+      },
+      { type: "separator" },
+      {
+        type: "link",
+        label: "See 3PPI API",
+        to: `${apis[0].path}`,
+        icon: "arrow-right",
+      },
+    ],
+  },
+  {
+    type: "link",
+    icon: "banknote-arrow-up",
+    to: `${apis[0].path}`,
+    label: "3PPI API",
+  },
+];
+
+const defaults: ZudokuConfig["defaults"] = {
+  apis: {
+    examplesLanguage: "js",
+    schemaDownload: {
+      enabled: true,
+      fileName: "openapi",
     },
-  ],
-  theme: {
-    light: {
-      background: "#ffffff",
-      foreground: "#211236",
-      card: "#ffffff",
-      cardForeground: "#211236",
-      popover: "#ffffff",
-      popoverForeground: "#211236",
-      primary: "#544ed2",
-      primaryForeground: "#ffffff",
-      secondary: "#f0effc",
-      secondaryForeground: "#544ed2",
-      muted: "#f5f4fb",
-      mutedForeground: "#6b6882",
-      accent: "#f0effc",
-      accentForeground: "#544ed2",
-      destructive: "#d63a0c",
-      destructiveForeground: "#ffffff",
-      border: "#e4e2f0",
-      input: "#e4e2f0",
-      ring: "#544ed2",
-      radius: "0.4rem",
-    },
-    dark: {
-      background: "#141218",
-      foreground: "#f0edf6",
-      card: "#1d1829",
-      cardForeground: "#f0edf6",
-      popover: "#1d1829",
-      popoverForeground: "#f0edf6",
-      primary: "#7d75f7",
-      primaryForeground: "#141218",
-      secondary: "#2a2440",
-      secondaryForeground: "#f0edf6",
-      muted: "#211c33",
-      mutedForeground: "#9f9ab5",
-      accent: "#2a2440",
-      accentForeground: "#5ae0e2",
-      destructive: "#ff8560",
-      destructiveForeground: "#141218",
-      border: "#2e2744",
-      input: "#2e2744",
-      ring: "#7d75f7",
-      radius: "0.4rem",
-    },
-    customCss: `
+  },
+};
+
+const search: ZudokuConfig["search"] = {
+  type: "pagefind",
+};
+
+const theme: ZudokuConfig["theme"] = {
+  light: {
+    background: "#ffffff",
+    foreground: "#211236",
+    card: "#ffffff",
+    cardForeground: "#211236",
+    popover: "#ffffff",
+    popoverForeground: "#211236",
+    primary: "#544ed2",
+    primaryForeground: "#ffffff",
+    secondary: "#f0effc",
+    secondaryForeground: "#544ed2",
+    muted: "#f5f4fb",
+    mutedForeground: "#6b6882",
+    accent: "#f0effc",
+    accentForeground: "#544ed2",
+    destructive: "#d63a0c",
+    destructiveForeground: "#ffffff",
+    border: "#e4e2f0",
+    input: "#e4e2f0",
+    ring: "#544ed2",
+    radius: "0.4rem",
+  },
+  dark: {
+    background: "#141218",
+    foreground: "#f0edf6",
+    card: "#1d1829",
+    cardForeground: "#f0edf6",
+    popover: "#1d1829",
+    popoverForeground: "#f0edf6",
+    primary: "#7d75f7",
+    primaryForeground: "#141218",
+    secondary: "#2a2440",
+    secondaryForeground: "#f0edf6",
+    muted: "#211c33",
+    mutedForeground: "#9f9ab5",
+    accent: "#2a2440",
+    accentForeground: "#5ae0e2",
+    destructive: "#ff8560",
+    destructiveForeground: "#141218",
+    border: "#2e2744",
+    input: "#2e2744",
+    ring: "#7d75f7",
+    radius: "0.4rem",
+  },
+  customCss: `
       :root {
         --color-primary: #544ed2;
         --color-primary-hover: #433dbb;
@@ -270,7 +227,20 @@ const config: ZudokuConfig = {
         --green-faint: #1a2e20;
       }
     `,
-  },
+};
+
+const config: ZudokuConfig = {
+  metadata,
+  docs,
+  site,
+  navigation,
+  defaults,
+  search,
+  apis,
+  theme,
+  redirects: [
+    { from: "/", to: "/introduction" },
+  ],
 };
 
 export default config;
