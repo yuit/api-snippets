@@ -14,7 +14,7 @@ const metadata: ZudokuConfig["metadata"] = {
 const apis: ZudokuConfig["apis"] = [
   {
     type: "file",
-    input: "../docs/thirdparty-v2.0-payment-initiation-snippets.yaml",
+    input: "./apis/thirdparty-v2.0-payment-initiation-snippets.yaml",
     path: "api-3ppi",
   },
 ];

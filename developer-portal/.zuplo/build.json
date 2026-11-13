@@ -1,0 +1,31 @@
+{
+  "BUILD_ID": "4520d67b-834c-4443-9638-1410867de1e0",
+  "TIMESTAMP": "2026-11-13T04:52:57.500Z",
+  "ZUPLO_VERSION": "7.15.9",
+  "COMPATIBILITY_DATE": "2026-03-01",
+  "ENVIRONMENT_TYPE": "LOCAL_DEVELOPMENT",
+  "IS_LOCAL_DEVELOPMENT": true,
+  "COMPATIBILITY_FLAGS": {
+    "runOutboundPoliciesOnHandlerOnAllStatuses": true,
+    "doNotRunHooksOnSystemRoutes": true,
+    "removeAllVendorHeadersExceptListed": true,
+    "allowCustomPorts": true,
+    "removeLegacyLogInitialization": true,
+    "useForwardRedirectsPropOnUrlForwardHandler": true,
+    "escapeOpenApiPathCharacters": true,
+    "delimitOpenApiPathParameters": false,
+    "chainResponseSendingHooks": true,
+    "return501ForUnsupportedHttpMethods": true,
+    "improvedSchemaValidation": false,
+    "serializeMcpParametersByStyle": false,
+    "sanitizeMcpToolNames": false,
+    "omitMcpFieldsNewerThanNegotiatedVersion": false,
+    "treatBlankOptionalStringOptionsAsUnset": false,
+    "mcpProtocolVersion20260728": false,
+    "failMcpResourceReadsOnErrorStatus": false,
+    "rejectInvalidMcpResourceUris": false,
+    "mcpGatewaySpecCompliance": false,
+    "mcpServerSpecCompliance": false
+  },
+  "ALLOW_SAME_ZONE_REQUESTS": false
+}

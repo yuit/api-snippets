@@ -66,7 +66,7 @@
     "test:functional": "echo 'No functional tests'",
     "test:coverage-check": "echo 'No coverage check'",
     "dev:watch": "browser-sync start --server 'docs' --cwd 'docs'  --files '*.yaml'",
-    "dev:portal": "npm --prefix developer-portal run dev"
+    "dev:portal": "npm --prefix developer-portal/docs run dev"
   },
   "lint-staged": {
     "*.{js,ts}": "eslint --cache --fix"

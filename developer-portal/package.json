@@ -4,23 +4,17 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "zudoku dev",
-    "build": "zudoku build",
-    "preview": "zudoku preview",
-    "lint": "eslint"
+    "dev": "zuplo dev",
+    "docs:dev": "npm --prefix docs run dev",
+    "docs:build": "npm --prefix docs run build",
+    "docs:preview": "npm --prefix docs run preview"
   },
   "dependencies": {
-    "react": ">=19.2.0",
-    "react-dom": ">=19.2.0",
-    "zudoku": "0.93.2"
+    "@zuplo/cli": "^7.15.9",
+    "@zuplo/runtime": "^7.15.9"
   },
   "devDependencies": {
     "@types/node": "^22",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "typescript": "^6",
-    "eslint": "^8",
-    "@typescript-eslint/eslint-plugin": "^8",
-    "@typescript-eslint/parser": "^8"
+    "typescript": "^6"
   }
 }
