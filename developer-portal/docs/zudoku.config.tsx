@@ -24,8 +24,23 @@ const apis: ZudokuConfig["apis"] = [
   },
   {
     type: "file",
+    input: "./apis/thirdparty-v1.0-openapi3-snippets.yaml",
+    path: "api-thirdparty-v1.0",
+  },
+  {
+    type: "file",
     input: "./apis/fspiop-rest-v1.1-openapi3-snippets.yaml",
     path: "api-fspiop-v1.1",
+  },
+  {
+    type: "file",
+    input: "./apis/fspiop-rest-v2.0-openapi3-snippets.yaml",
+    path: "api-fspiop-v2.0",
+  },
+  {
+    type: "file",
+    input: "./apis/fspiop-rest-v2.0-ISO20022-openapi3-snippets.yaml",
+    path: "api-fspiop-v2.0-iso20022",
   },
 ];
 

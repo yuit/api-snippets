@@ -1,5 +1,5 @@
 import { Link } from "zudoku/components";
-import { ArrowLeftRight, type LucideIcon } from "zudoku/icons";
+import { ArrowLeftRight, Coins, Globe, GlobeCode, type LucideIcon } from "zudoku/icons";
 import { Badge } from "zudoku/ui/Badge";
 import { Card, CardContent, CardHeader } from "zudoku/ui/Card";
 
@@ -21,6 +21,24 @@ const fspiopApis: FspiopApiCardItem[] = [
     description:
       "Asynchronous RESTful API for Financial Service Provider interoperability, enabling party lookup, quoting, and real-time clearing and settlement across a Mojaloop hub.",
     tags: ["Parties", "Quotes", "Transfers"],
+  },
+  {
+    icon: Globe,
+    title: "Open API for FSP Interoperability (FSPIOP)",
+    version: "v2.0",
+    path: "/api-fspiop-v2.0",
+    description:
+      "Extended FSPIOP specification adding foreign exchange (FX) quotes, FX transfers, FXP service discovery, and enhanced third-party authentication support.",
+    tags: ["Parties", "Quotes", "Transfers", "FX"],
+  },
+  {
+    icon: GlobeCode,
+    title: "Open API for FSP Interoperability (ISO 20022)",
+    version: "v2.0",
+    path: "/api-fspiop-v2.0-iso20022",
+    description:
+      "ISO 20022 message version of the FSPIOP API for party lookup, quoting, transfers, and foreign exchange (FX) operations across a Mojaloop hub.",
+    tags: ["Parties", "Quotes", "Transfers", "FX"],
   },
 ];
 

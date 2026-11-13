@@ -31,6 +31,15 @@ const thirdpartyApis: ThirdpartyApiCardItem[] = [
       "Allows PISPs to initiate transaction requests and transfers on behalf of authenticated customers over a centralized Mojaloop hub.",
     tags: ["TransactionRequests", "Transfers"],
   },
+  {
+    icon: UserCheck,
+    title: "Third-party API V1.0",
+    version: "v1.0",
+    path: "/api-thirdparty-v1.0",
+    description:
+      "Combined Third-party API specification for account discovery, consent management, authorizations, and third-party transaction requests.",
+    tags: ["Accounts", "Consents", "ThirdpartyRequests"],
+  },
 ];
 
 export const ThirdpartyApiCatalog = () => {
