@@ -17,6 +17,11 @@ const apis: ZudokuConfig["apis"] = [
     input: "./apis/thirdparty-v2.0-payment-initiation-snippets.yaml",
     path: "api-3ppi",
   },
+  {
+    type: "file",
+    input: "./apis/thirdparty-v2.0-admin-snippets.yaml",
+    path: "api-3ppa",
+  },
 ];
 
 const docs: ZudokuConfig["docs"] = {
@@ -102,31 +107,35 @@ const navigation: ZudokuConfig["navigation"] = [
       { type: "filter", placeholder: "Filter documentation" },
       {
         type: "category",
-        icon: "telescope",
+        icon: "infinity",
         collapsed: false,
         label: "About Mojaloop",
         items: ["introduction", "architecture-overview"],
       },
-      {
-        type: "category",
-        icon: "life-buoy",
-        label: "Community",
-        items: ["community/guide", "community/help-and-bug-reports"],
-      },
       { type: "separator" },
       {
-        type: "link",
-        label: "See 3PPI API",
-        to: `${apis[0].path}`,
-        icon: "arrow-right",
+        type: "category",
+        icon:  "library-big",
+        label: "API Reference",
+        items: [
+          {
+            type: "link",
+            label: "Thirdparty API",
+            icon: "user-round-group",
+            to: "/thirdparty-api",
+          }
+        ],
       },
     ],
   },
   {
-    type: "link",
-    icon: "banknote-arrow-up",
-    to: `${apis[0].path}`,
-    label: "3PPI API",
+    type: "category",
+    label: "Thirdparty API",
+    icon: "user-round-group",
+    items: [
+      "thirdparty-api",
+      "thirdparty/terms",
+    ],
   },
 ];
 

@@ -19,6 +19,10 @@ For more details, see the [Mojaloop Technical Documentation](https://docs.mojalo
 | **Quoting Service** (`quoting-service`) | Facilitates fee and commission calculations prior to transfer execution. Orchestrates quote requests between Payer and Payee DFSPs to determine applicable exchange rates, fees, and commissions. |
 | **Central Settlement** (`central-settlement`) | Manages settlement processes between the hub and participating DFSPs, coordinating with external settlement engines. |
 
+### Thirdparty Services
+
+The **Thirdparty Service** enables non-fund-holding participants, such as Payment Initiation Service Providers (PISPs), to interact across a centralized Mojaloop hub. It allows PISPs to securely link customer accounts and initiate payments on behalf of their customers across participating DFSPs, while ensuring customers retain full control over account access, consent, and transaction authorization.
+
 ### Edge & Ecosystem Components
 
 | Component | Description |
