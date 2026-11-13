@@ -22,6 +22,11 @@ const apis: ZudokuConfig["apis"] = [
     input: "./apis/thirdparty-v2.0-admin-snippets.yaml",
     path: "api-3ppa",
   },
+  {
+    type: "file",
+    input: "./apis/fspiop-rest-v1.1-openapi3-snippets.yaml",
+    path: "api-fspiop-v1.1",
+  },
 ];
 
 const docs: ZudokuConfig["docs"] = {
@@ -120,12 +125,27 @@ const navigation: ZudokuConfig["navigation"] = [
         items: [
           {
             type: "link",
+            label: "FSPIOP API",
+            icon: "arrow-left-right",
+            to: "/fspiop-api",
+          },
+          {
+            type: "link",
             label: "Thirdparty API",
             icon: "user-round-group",
             to: "/thirdparty-api",
           }
         ],
       },
+    ],
+  },
+  {
+    type: "category",
+    label: "FSPIOP API",
+    icon: "arrow-left-right",
+    items: [
+      "fspiop-api",
+      "fspiop/terms",
     ],
   },
   {
