@@ -1,0 +1,20 @@
+{
+  "name": "developer-portal",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "zuplo dev",
+    "docs:dev": "npm --prefix docs run dev",
+    "docs:build": "npm --prefix docs run build",
+    "docs:preview": "npm --prefix docs run preview"
+  },
+  "dependencies": {
+    "@zuplo/cli": "^7.15.9",
+    "@zuplo/runtime": "^7.15.9"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "typescript": "^6"
+  }
+}

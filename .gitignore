@@ -6,3 +6,7 @@ junit.xml
 coverage
 *.idea
 .DS_Store
+
+# Developer Portal
+developer-portal/**/dist
+developer-portal/.zuplo
