@@ -15,27 +15,27 @@ type ThirdpartyApiCardItem = {
 const thirdpartyApis: ThirdpartyApiCardItem[] = [
   {
     icon: UserShield,
-    title: "Third-party Admin API",
+    title: "Third-party Admin",
     version: "v2.0",
-    path: "/api-3ppa",
+    path: "/api-third-party-admin",
     description:
       "Allows PISPs and DFSPs to manage account discovery, account linking, consent requests, consents, authorizations, and verifications.",
     tags: ["Accounts", "Consents", "Authorizations"],
   },
   {
     icon: BanknoteArrowUp,
-    title: "Third-party Payment Initiation API",
+    title: "Third-party Payment Initiation",
     version: "v2.0",
-    path: "/api-3ppi",
+    path: "/api-third-party-payment",
     description:
       "Allows PISPs to initiate transaction requests and transfers on behalf of authenticated customers over a centralized Mojaloop hub.",
     tags: ["TransactionRequests", "Transfers"],
   },
   {
     icon: UserCheck,
-    title: "Third-party API V1.0",
+    title: "Third-party v1.0",
     version: "v1.0",
-    path: "/api-thirdparty-v1.0",
+    path: "/api-third-party-v1.0",
     description:
       "Combined Third-party API specification for account discovery, consent management, authorizations, and third-party transaction requests.",
     tags: ["Accounts", "Consents", "ThirdpartyRequests"],

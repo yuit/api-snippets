@@ -15,7 +15,7 @@ type FspiopApiCardItem = {
 const fspiopApis: FspiopApiCardItem[] = [
   {
     icon: ArrowLeftRight,
-    title: "Open API for FSP Interoperability (FSPIOP)",
+    title: "FSPIOP v1.1",
     version: "v1.1",
     path: "/api-fspiop-v1.1",
     description:
@@ -24,7 +24,7 @@ const fspiopApis: FspiopApiCardItem[] = [
   },
   {
     icon: Globe,
-    title: "Open API for FSP Interoperability (FSPIOP)",
+    title: "FSPIOP v2.0",
     version: "v2.0",
     path: "/api-fspiop-v2.0",
     description:
@@ -33,7 +33,7 @@ const fspiopApis: FspiopApiCardItem[] = [
   },
   {
     icon: GlobeCode,
-    title: "Open API for FSP Interoperability (ISO 20022)",
+    title: "FSPIOP v2.0:ISO20022",
     version: "v2.0",
     path: "/api-fspiop-v2.0-iso20022",
     description:

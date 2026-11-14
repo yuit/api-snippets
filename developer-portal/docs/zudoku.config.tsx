@@ -15,17 +15,17 @@ const apis: ZudokuConfig["apis"] = [
   {
     type: "file",
     input: "./apis/thirdparty-v2.0-payment-initiation-snippets.yaml",
-    path: "api-3ppi",
+    path: "api-third-party-payment",
   },
   {
     type: "file",
     input: "./apis/thirdparty-v2.0-admin-snippets.yaml",
-    path: "api-3ppa",
+    path: "api-third-party-admin",
   },
   {
     type: "file",
     input: "./apis/thirdparty-v1.0-openapi3-snippets.yaml",
-    path: "api-thirdparty-v1.0",
+    path: "api-third-party-v1.0",
   },
   {
     type: "file",
@@ -48,12 +48,11 @@ const docs: ZudokuConfig["docs"] = {
   publishMarkdown: true,
   contentNegotiation: true,
   llms: {
-    files: "pages/**/*.{md,mdx}",
     llmsTxt: true,
     llmsTxtFull: true,
     title: "Mojaloop  Developer Platform",
     description:
-      "Open source financial infrastructure for building an inclusive instant payment system",
+      "Open source software lowers the cost to build, maintain and modify an inclusive instant payment system",
     instructions:
       "This is the Mojaloop Developer Platform. You can use this platform to explore the Mojaloop APIs, read the documentation, and learn how to integrate with Mojaloop.",
   },
@@ -161,8 +160,7 @@ const navigation: ZudokuConfig["navigation"] = [
     icon: "arrow-left-right",
     items: [
       "fspiop-api",
-      { type: "separator" },
-      { type: "doc", file: "fspiop/terms", icon: "book-a" },
+      "fspiop/terms",
     ],
   },
   {
@@ -171,8 +169,7 @@ const navigation: ZudokuConfig["navigation"] = [
     icon: "user-round-group",
     items: [
       "thirdparty-api",
-      { type: "separator" },
-      { type: "doc", file: "thirdparty/terms", icon: "book-a" },
+      "thirdparty/terms",
     ],
   },
 ];
