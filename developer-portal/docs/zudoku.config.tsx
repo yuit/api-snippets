@@ -5,8 +5,7 @@ import { ApiLifecycleBanner } from "./src/LifecycleBadge";
 import { NotFound } from "./src/NotFound";
 
 const metadata: ZudokuConfig["metadata"] = {
-  favicon:
-    "https://mojaloop.io/wp-content/uploads/2025/04/cropped-cropped-mojaloop_favicon-32x32.png",
+  favicon: "/favicon.png",
   title: "%s | Mojaloop Foundation",
   defaultTitle: "Mojaloop Foundation",
   description: "Open Source Inclusive Instant Payment System",
